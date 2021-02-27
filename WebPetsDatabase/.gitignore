@@ -1,0 +1,15 @@
+# Eclipse
+.settings/
+.buildpath
+.classpath
+.project
+
+# Java
+*.class
+# packages 
+*.jar
+*.war
+*.ear
+
+# GIT
+.git/
