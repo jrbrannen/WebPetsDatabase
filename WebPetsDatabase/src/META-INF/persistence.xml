@@ -7,7 +7,7 @@
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://cis175.cklf7lmatroh.us-east-1.rds.amazonaws.com/petsdb"/>
 			<property name="javax.persistence.jdbc.user" value="admin"/>
-			<property name="javax.persistence.jdbc.password" value="Codabu7&amp;"/>
+			<property name="javax.persistence.jdbc.password" value="java2class"/>
 		</properties>
 	</persistence-unit>
 </persistence>

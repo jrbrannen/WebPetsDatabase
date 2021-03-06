@@ -15,6 +15,7 @@ import javax.persistence.Table;
 @Table(name="Owners")
 /**
  * @author Jeremy Brannen - jrbrannen
+ * 			Corry Burton  - codabu
  *CIS175
  * Mar 5, 2021
  */
@@ -33,6 +34,11 @@ public class Owner {
 		super();
 	}
 
+	public Owner (String name) {
+		super();
+		this.name = name;
+	}
+	
 	public Owner(int id, String name, Pet pet) {
 		super();
 		this.id = id;
