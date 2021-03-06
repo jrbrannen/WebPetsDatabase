@@ -13,3 +13,4 @@
 
 # GIT
 .git/
+/target/
