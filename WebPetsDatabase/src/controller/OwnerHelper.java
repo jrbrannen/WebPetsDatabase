@@ -71,5 +71,19 @@ public class OwnerHelper {
 			em.close();
 			return found;
 		}
+
+		/**
+		 * @param ownerToUpdate
+		 */
+		public void updateOwner(Owner ownerToUpdate) {
+			// uses entity object to merge(update) either the store or item depending on
+			// user input and save it to the database using the same id number
+			EntityManager em = emfactory.createEntityManager();
+			em.getTransaction().begin();
+			em.merge(ownerToUpdate);
+			em.getTransaction().commit();
+			em.close();
+			
+		}
 	
 }
