@@ -26,12 +26,13 @@ public class OwnerHelper {
 		return allOwners;
 	}
 	
-	public void deletePainter(Owner toDelete) {
+	public void deleteOwner(Owner toDelete) {
 		// TODO Auto-generated method stub
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
-		TypedQuery<Owner> typedQuery = em.createQuery("select o from Owner o where o.name = :selectedName", Owner.class);
+		TypedQuery<Owner> typedQuery = em.createQuery("select i from Owner i where i.id = :selectedId and i.name = :selectedName", Owner.class);
 		
+		typedQuery.setParameter("selectedId", toDelete.getId());
 		typedQuery.setParameter("selectedName", toDelete.getName());
 		
 		typedQuery.setMaxResults(1);
@@ -55,6 +56,20 @@ public class OwnerHelper {
 	//cleanUp method closes off the connection to the db
 		public void cleanUp() {
 			emfactory.close();
+		}
+
+		/**
+		 * @param tempId
+		 * @return
+		 */
+		public Owner searchForOwnerById(Integer idToEdit) {
+			// uses entity manager object to search database for an id
+			// and returns it in a variable
+			EntityManager em = emfactory.createEntityManager();
+			em.getTransaction().begin();
+			Owner found = em.find(Owner.class, idToEdit);
+			em.close();
+			return found;
 		}
 	
 }

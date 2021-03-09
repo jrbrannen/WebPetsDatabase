@@ -12,7 +12,7 @@
 	
 	<body>
 	
-		<form method="post" action="ownerNavigationServlet">
+		<form method="post" action="ownerNavServlet">
 		
 			<table>
 			
