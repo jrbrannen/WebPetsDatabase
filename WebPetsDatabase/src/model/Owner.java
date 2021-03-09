@@ -27,8 +27,8 @@ public class Owner {
 	private int id;
 	@Column(name="owner_name")
 	private String name;
-	@JoinTable(name="Pets", joinColumns = {@JoinColumn(name = "owner_id", referencedColumnName = "pet_id")})
-	private Pet pet;
+	//@JoinTable(name="Pets", joinColumns = {@JoinColumn(name = "owner_id", referencedColumnName = "pet_id")})
+	//private Pet pet;
 	
 	public Owner() {
 		super();
@@ -43,7 +43,7 @@ public class Owner {
 		super();
 		this.id = id;
 		this.name = name;
-		this.pet = pet;
+//		this.pet = pet;
 	}
 
 	public int getId() {
@@ -62,17 +62,17 @@ public class Owner {
 		this.name = name;
 	}
 
-	public Pet getPet() {
-		return pet;
-	}
-
-	public void setPet(Pet pet) {
-		this.pet = pet;
-	}
-
-	@Override
-	public String toString() {
-		return "Owner [id=" + id + ", name=" + name + ", pet=" + pet + "]";
-	}
+//	public Pet getPet() {
+//		return pet;
+//	}
+//
+//	public void setPet(Pet pet) {
+//		this.pet = pet;
+//	}
+//
+//	@Override
+//	public String toString() {
+//		return "Owner [id=" + id + ", name=" + name + ", pet=" + pet + "]";
+//	}
 
 }

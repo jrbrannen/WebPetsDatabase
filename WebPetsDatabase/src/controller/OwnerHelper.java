@@ -1,12 +1,11 @@
 package controller;
-
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-
+import javax.persistence.TypedQuery;
 import model.Owner;
+
 
 
 /**
@@ -27,6 +26,23 @@ public class OwnerHelper {
 		return allOwners;
 	}
 	
+	public void deletePainter(Owner toDelete) {
+		// TODO Auto-generated method stub
+		EntityManager em = emfactory.createEntityManager();
+		em.getTransaction().begin();
+		TypedQuery<Owner> typedQuery = em.createQuery("select o from Owner o where o.name = :selectedName", Owner.class);
+		
+		typedQuery.setParameter("selectedName", toDelete.getName());
+		
+		typedQuery.setMaxResults(1);
+		
+		Owner result = typedQuery.getSingleResult();
+		
+		em.remove(result);
+		em.getTransaction().commit();
+		em.close();
+		
+	}
 	
 	public void insertItem(Owner o) {
 		EntityManager em = emfactory.createEntityManager();
