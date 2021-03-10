@@ -33,7 +33,7 @@ public class OwnerNavServlet extends HttpServlet {
 		
 		String path = "/viewOwnersServlet";
 		
-		if (act.equals("delete")) {
+		if (act.equals("Delete An Owner")) {
 			try {
 				Integer tempId = Integer.parseInt(request.getParameter("id"));
 				Owner ownerToDelete = oh.searchForOwnerById(tempId);
@@ -41,7 +41,7 @@ public class OwnerNavServlet extends HttpServlet {
 			} catch (NumberFormatException e) {
 				System.out.println("Forgot to select an owner");
 			}
-		} else if (act.equals("edit")) {
+		} else if (act.equals("Edit An Owner")) {
 			try {
 				Integer tempId = Integer.parseInt(request.getParameter("id"));
 				Owner ownerToEdit = oh.searchForOwnerById(tempId);
@@ -50,7 +50,7 @@ public class OwnerNavServlet extends HttpServlet {
 			} catch(NumberFormatException e) {
 				System.out.println("Forgot to select an owner.");
 			}
-		} else if (act.equals("add")) {
+		} else if (act.equals("Add An Owner")) {
 			path = "/index.html";
 		}
 

@@ -45,7 +45,7 @@ public class Pet {
 		this.name = name;
 		this.type = type;
 		this.adoptionDate = adoptionDate;
-		this.owner = owner;
+//		this.owner = owner;
 		
 	}
 
@@ -91,8 +91,7 @@ public class Pet {
 
 	@Override
 	public String toString() {
-		return "Pet [id=" + id + ", name=" + name + ", type=" + type + ", adoptionDate=" + adoptionDate + ", owner="
-				+ owner + "]";
+		return "Pet [id=" + id + ", name=" + name + ", type=" + type + ", adoptionDate=" + adoptionDate + "]";
 	}
 	
 }
