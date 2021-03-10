@@ -27,12 +27,15 @@
 					
 				</tr>
 					
+						<!--  -->
 					
 						<c:forEach var="pet" items="${currentOwners.pet}">
 						
 						<tr><td></td><td>Pet: ${pet.name}, is a ${pet.type}, adopted on ${pet.adoptionDate}</td></tr>
 						
 						</c:forEach>
+						
+						
 							
 				</c:forEach>
 				
@@ -47,7 +50,7 @@
 			
 		</form>
 		
-		<p><a href="edit-pet.jsp">Add, Delete, or Edit a pet</a></p>
+		<p><a href="addPetPageServlet">Add a pet</a></p>
 	
 		<p><a href="index.html">Back To Home Page</a></p>
 	

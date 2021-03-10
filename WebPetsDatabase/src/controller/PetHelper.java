@@ -7,6 +7,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
+
+import model.Owner;
 import model.Pet;
 
 /**
@@ -54,6 +56,14 @@ public class PetHelper {
 		List<Pet> allPets = em.createQuery("SELECT p FROM Pet p").getResultList();
 		return allPets;
 	}
+	
+	public void insertItem(Pet p) {
+		EntityManager em = emfactory.createEntityManager();
+		em.getTransaction().begin();
+		em.persist(p);
+		em.getTransaction().commit();
+		em.close();
+		}
 	
 	public Pet searchForPetById(int idToEdit) {
 
