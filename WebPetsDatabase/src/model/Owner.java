@@ -2,13 +2,18 @@
  * 
  */
 package model;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -27,8 +32,9 @@ public class Owner {
 	private int id;
 	@Column(name="owner_name")
 	private String name;
-	//@JoinTable(name="Pets", joinColumns = {@JoinColumn(name = "owner_id", referencedColumnName = "pet_id")})
-	//private Pet pet;
+	@OneToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
+	@JoinTable(name="Pets", joinColumns= {@JoinColumn(name="owner_id", referencedColumnName="owner_id")}, inverseJoinColumns= { @JoinColumn(name="pet_id", referencedColumnName="pet_id", unique = true)})	
+	private List<Pet> pet;
 	
 	public Owner() {
 		super();
@@ -39,11 +45,11 @@ public class Owner {
 		this.name = name;
 	}
 	
-	public Owner(int id, String name, Pet pet) {
+	public Owner(int id, String name, List<Pet> pet) {
 		super();
 		this.id = id;
 		this.name = name;
-//		this.pet = pet;
+		this.pet = pet;
 	}
 
 	public int getId() {
@@ -62,17 +68,17 @@ public class Owner {
 		this.name = name;
 	}
 
-//	public Pet getPet() {
-//		return pet;
-//	}
-//
-//	public void setPet(Pet pet) {
-//		this.pet = pet;
-//	}
-//
-//	@Override
-//	public String toString() {
-//		return "Owner [id=" + id + ", name=" + name + ", pet=" + pet + "]";
-//	}
+	public List<Pet> getPet() {
+		return pet;
+	}
+
+	public void setPet(List<Pet> pet) {
+		this.pet = pet;
+	}
+
+	@Override
+	public String toString() {
+		return "Owner [id=" + id + ", name=" + name + ", pet=" + pet + "]";
+	}
 
 }

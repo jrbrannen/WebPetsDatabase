@@ -8,6 +8,8 @@
 		
 		<title>Owner List</title>
 		
+		<link rel="stylesheet" type="text/css" href="mainStyle.css" />
+		
 	</head>
 	
 	<body>
@@ -26,27 +28,28 @@
 				</tr>
 					
 					
-						<!--<c:forEach var="owner" items="${currentowner.listofPets}">
+						<c:forEach var="pet" items="${currentOwners.pet}">
 						
-						<tr><td></td><td colspan= "3">$listVal.name}</td><tr>
+						<tr><td></td><td>Pet: ${pet.name}, is a ${pet.type}, adopted on ${pet.adoptionDate}</td></tr>
 						
-						</c:forEach>-->
+						</c:forEach>
 							
 				</c:forEach>
 				
 			</table>
 			
-			<input type ="submit" value ="edit" name="doThisToOwner">
+			<input type ="submit" value ="Edit An Owner" name="doThisToOwner">
 			
-			<input type ="submit" value ="delete" name="doThisToOwner">
+			<input type ="submit" value ="Delete An Owner" name="doThisToOwner">
 			
-			<input type="submit" value ="add" name ="doThisToOwner">
+			<input type="submit" value ="Add An Owner" name ="doThisToOwner">
+			
 			
 		</form>
 		
-		<a href=" "></a>
+		<p><a href="edit-pet.jsp">Add, Delete, or Edit a pet</a></p>
 	
-		<a href="index.html">Home Page</a>
+		<p><a href="index.html">Back To Home Page</a></p>
 	
 	</body>
 	

@@ -51,11 +51,11 @@ public class PetHelper {
 
 		// users entity manager object to query data and puts the data in a list
 		EntityManager em = emfactory.createEntityManager();
-		List<Pet> allPets = em.createQuery("SELECT i FROM Pets i").getResultList();
+		List<Pet> allPets = em.createQuery("SELECT p FROM Pet p").getResultList();
 		return allPets;
 	}
 	
-	public Pet searchForPaintById(int idToEdit) {
+	public Pet searchForPetById(int idToEdit) {
 
 		// uses entity manager object to search database for an id
 		// and returns it in a variable
@@ -66,7 +66,7 @@ public class PetHelper {
 		return found;
 	}
 	
-	public void updateItem(Pet toEdit) {
+	public void updatePet(Pet toEdit) {
 
 		// uses entity object to merge(update) name, type, or adoption date depending on
 		// user input and saves it to the database using the id number

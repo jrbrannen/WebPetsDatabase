@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.Owner;
+import model.Pet;
 
 /**
  * Servlet implementation class ViewOwners
@@ -32,8 +33,11 @@ public class ViewOwnersServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		OwnerHelper owner = new OwnerHelper();
+		PetHelper p	= new PetHelper();
+		List<Pet> pets = p.showAllPets();
 		
 		request.setAttribute("allOwners", owner.showAllOwners());
+		request.setAttribute("allPets", pets);
 		
 		String path = "/owner-list.jsp";
 		

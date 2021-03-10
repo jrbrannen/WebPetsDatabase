@@ -9,6 +9,9 @@
 		<meta charset="ISO-8859-1">
 		
 		<title>Edit An Owner</title>
+		
+		<link rel="stylesheet" type="text/css" href="mainStyle.css" />
+		
 	</head>
 	
 	<body>
