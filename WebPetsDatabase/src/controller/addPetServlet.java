@@ -47,7 +47,7 @@ public class addPetServlet extends HttpServlet {
 		PetHelper dao = new PetHelper();
 		dao.insertItem(p);
 		
-		getServletContext().getRequestDispatcher("/index.html").forward(request, response);
+		getServletContext().getRequestDispatcher("/viewOwnersServlet").forward(request, response);
 	}
 
 }

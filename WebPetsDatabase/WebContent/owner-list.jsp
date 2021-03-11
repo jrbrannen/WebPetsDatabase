@@ -27,15 +27,12 @@
 					
 				</tr>
 					
-						<!--  -->
-					
-						<c:forEach var="pet" items="${currentOwners.pet}">
-						
-						<tr><td></td><td>Pet: ${pet.name}, is a ${pet.type}, adopted on ${pet.adoptionDate}</td></tr>
-						
-						</c:forEach>
-						
-						
+						<!-- Made these changes so that the newly added pets show without having to restart the server -->
+						<c:forEach items="${requestScope.allPets}" var="currentPet">
+  							<c:if test = "${currentPet.owner.id == currentOwners.id}">
+  								<tr><td></td><td>Pet: ${currentPet.name}, is a ${currentPet.type}, adopted on ${currentPet.adoptionDate}</td></tr>
+  							</c:if>
+  						</c:forEach>
 							
 				</c:forEach>
 				
