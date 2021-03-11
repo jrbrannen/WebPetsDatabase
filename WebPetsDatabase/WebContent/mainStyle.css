@@ -1,5 +1,26 @@
 @charset "ISO-8859-1";
-
+@import url('https://fonts.googleapis.com/css2?family=Antic+Slab&family=Kavivanar&display=swap');
+html{
+	background-image: linear-gradient(to left, lightblue, teal);
+}
 body{
-	background-color: lightblue;
+	
+	font-family: 'Kavivanar', cursive;
+	font-weight: 500;
+}
+input{
+	font-family: 'Kavivanar', cursive;
+	border-radius:5px;
+	border-style:outset;
+}
+input[type=submit]:hover{
+	transform:scale(.9);
+}
+a{
+	text-decoration:none;
+	color: white;
+	text-shadow: 2px 2px 4px green;
+}
+a:hover{
+	color: limegreen;
 }
