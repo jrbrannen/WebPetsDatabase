@@ -45,7 +45,7 @@ public class Pet {
 		this.name = name;
 		this.type = type;
 		this.adoptionDate = adoptionDate;
-//		this.owner = owner;
+		this.owner = owner;
 		
 	}
 
