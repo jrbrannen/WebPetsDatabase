@@ -8,10 +8,31 @@
 		
 		<link rel="stylesheet" type="text/css" href="mainStyle.css" />
 		
+		<script>
+		
+			function validate(){
+				if(document.inputOwner.name.value == ""){
+					alert("Please enter an owner's name!");
+					document.inputOwner.name.focus();
+					return false;
+				}
+				
+				let letters = /^[A-Za-z]+$/;
+				
+				if(!document.inputOwner.name.value.match(letters)){
+					alert("Owner name must be all letters!");
+					document.inputOwner.name.focus();
+					return false;
+				}
+				return true;
+			}
+		
+		</script>
+		
 	</head>
 	<body>
 	
-	<form action="addOwnerServlet" method="post">
+	<form action = "addOwnerServlet" name= "inputOwner" onsubmit = "return(validate())" method = "post">
 	
 		Pet owner's name: <input type ="text" name = "name">
 		

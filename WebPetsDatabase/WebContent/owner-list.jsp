@@ -10,11 +10,41 @@
 		
 		<link rel="stylesheet" type="text/css" href="mainStyle.css" />
 		
+		<script>
+		
+			function checkOwnerSelection(id)	{
+				if(!id.length){
+					id = [id];
+				}
+				for(let i = 0; i < id.length; i++){
+					if(id[i].checked) 
+					return id[i].value;
+				}
+				return false;
+			}
+			
+			function checkForm(editOwner){
+				if(radioValue = checkOwnerSelection(editOwner.id)){
+				//	alert("You are selecting: " + radioValue);
+					return true;
+				}else{
+					alert("You need to select an owner!");
+					return false;
+				}
+			}
+			
+			function redirect(){
+				let url = "index.html";
+				window.location(url);
+			}
+		
+		</script>
+		
 	</head>
 	
 	<body>
 	
-		<form method="post" action="ownerNavServlet">
+		<form name="editOwner" method="post" onsubmit="return(checkForm(this))" action="ownerNavServlet">
 		
 			<table>
 			
@@ -42,7 +72,7 @@
 			
 			<input type ="submit" value ="Delete An Owner" name="doThisToOwner">
 			
-			<input type="submit" value ="Add An Owner" name ="doThisToOwner">
+			<input type="button" value ="Add An Owner" name ="doThisToOwner" onclick="redirect()">
 			
 			
 		</form>

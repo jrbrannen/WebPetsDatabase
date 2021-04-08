@@ -13,6 +13,9 @@ input{
 	border-radius:5px;
 	border-style:outset;
 }
+input[type=button]:hover{
+	transform:scale(.9);
+}
 input[type=submit]:hover{
 	transform:scale(.9);
 }
