@@ -34,7 +34,7 @@
 				
 				let format = /^\d{4}\-\d{1,2}\-\d{1,2}$/;
 				if(!addPet.adoptionDate.value.match(format)){
-					alert(addPet.adoptionDate.value + " Is not a valid date format\n Format needs to be YYYY/MM/DD");
+					alert(addPet.adoptionDate.value + " Is not a valid date format\n Format needs to be YYYY-MM-DD");
 					document.addPet.adoptionDate.focus();
 					return false;
 				}
